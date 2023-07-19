@@ -1,0 +1,16 @@
+<div class="page">
+  <label htmlFor="count-input">{{labelText}}</label>
+  <div id="count-input" name="count-input" [ngClass]="{expanded: isDropdownExpanded}" (click)="toggleDropDown()">
+    {{fieldValueToDisplay || placeholder}}</div>
+
+  <div class="scroll" (scroll)="onScroll($event)" [ngStyle]="!isDropdownExpanded ? {display: 'none'} : {}">
+    <div class="inner" [ngStyle]="innerDivStyle">
+      <div *ngFor="let item of items; let index = index; trackBy: trackItemBy" class="item" [ngStyle]="item.style">
+        <div class="list-item-inner" (click)="handleOnOptionClick($event, item.index, item)">
+          &#8226;
+          {{item.label}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+.page {
+	margin: 20px;
+}
+
+.page>input {
+	margin-bottom: 10px;
+	width: 300px;
+}
+
+.scroll {
+	overflow-y: scroll;
+	height: 400px;
+	width: 100%;
+	max-width: 320px;
+	border-radius: 3px;
+}
+
+.item {
+	height: 40px;
+	box-sizing: border-box;
+	padding: 5px;
+}
+
+.item:nth-child(even) {
+	background-color: lightgreen;
+}
+
+.item:nth-child(odd) {
+	background-color: lightblue;
+}
+
+.list-item-inner {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	height: 100%;
+}
+
+
+/** 
+  Making this element look like dropdown
+  */
+#count-input {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+
+	user-select: none;
+
+	min-width: 15ch;
+	max-width: 30ch;
+	border: 1px solid #777;
+	border-radius: 0.25em;
+	padding: 0.25em 0.5em;
+	font-size: 1.25rem;
+	cursor: pointer;
+	line-height: 1.1;
+	background-color: #fff;
+	background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+
+	&::after {
+		content: "";
+		width: 0.8em;
+		height: 0.5em;
+		background-color: blue;
+		clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+	}
+}
